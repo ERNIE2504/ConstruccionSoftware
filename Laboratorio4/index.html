@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios de JavaScript</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    table { border-collapse: collapse; width: 50%; margin: 20px 0; }
+    th, td { border: 1px solid black; padding: 8px; text-align: center; }
+    th { background-color: #f2f2f2; }
+  </style>
+</head>
+<body>
+<h1>Ejercicios de JavaScript</h1>
+<div id="output"></div>
+<script>
+  // Problema 1: Tabla de cuadrados y cubos
+  document.addEventListener("DOMContentLoaded", () => {
+    let num = parseInt(prompt("Ingresa un número:"));
+    let output = document.getElementById("output");
+    output.innerHTML += "<h2>Tabla de Cuadrados y Cubos</h2>";
+    let table = "<table><tr><th>Número</th><th>Cuadrado</th><th>Cubo</th></tr>";
+    for (let i = 1; i <= num; i++) {
+      table += `<tr><td>${i}</td><td>${i ** 2}</td><td>${i ** 3}</td></tr>`;
+    }
+    table += "</table>";
+    output.innerHTML += table;
+  });
+
+  // Problema 2: Suma aleatoria
+  document.addEventListener("DOMContentLoaded", () => {
+    let num1 = Math.floor(Math.random() * 10) + 1;
+    let num2 = Math.floor(Math.random() * 10) + 1;
+    let startTime = Date.now();
+    let respuesta = parseInt(prompt(`¿Cuánto es ${num1} + ${num2}?`));
+    let endTime = Date.now();
+    let tiempo = (endTime - startTime) / 1000;
+    let resultMessage = respuesta === num1 + num2 ?
+            `<p>Respuesta correcta en ${tiempo} segundos.</p>` :
+            `<p>Respuesta incorrecta. La respuesta era ${num1 + num2}. Tardaste ${tiempo} segundos.</p>`;
+    document.getElementById("output").innerHTML += resultMessage;
+  });
+
+  // Problema 3: Contador
+  function contador(arr) {
+    let negativos = arr.filter(n => n < 0).length;
+    let ceros = arr.filter(n => n === 0).length;
+    let positivos = arr.filter(n => n > 0).length;
+    return { negativos, ceros, positivos };
+  }
+  console.assert(JSON.stringify(contador([-2, -1, 0, 1, 2])) === JSON.stringify({ negativos: 2, ceros: 1, positivos: 2 }));
+
+  // Problema 4: Promedios
+  function promedios(matriz) {
+    return matriz.map(row => row.reduce((sum, num) => sum + num, 0) / row.length);
+  }
+  console.assert(JSON.stringify(promedios([[1,2,3],[4,5,6]])) === JSON.stringify([2, 5]));
+
+  // Problema 5: Inverso
+  function inverso(num) {
+    return parseInt(num.toString().split('').reverse().join(''));
+  }
+  console.assert(inverso(1234) === 4321);
+
+  // Problema 6:
+  class Sensor {
+    constructor(tipo, valor) {
+      this.tipo = tipo;
+      this.valor = valor;
+    }
+    mostrar() {
+      return `Sensor: ${this.tipo}, Valor: ${this.valor}`;
+    }
+    actualizarValor(nuevoValor) {
+      this.valor = nuevoValor;
+    }
+  }
+  const sensor1 = new Sensor("Temperatura", 25);
+  document.addEventListener("DOMContentLoaded", () => {
+    let output = document.getElementById("output");
+    output.innerHTML += `<p>${sensor1.mostrar()}</p>`;
+    sensor1.actualizarValor(30);
+    output.innerHTML += `<p>${sensor1.mostrar()}</p>`;
+  });
+</script>
+  <h4>Preguntas a responder</h4>
+  <p>1. Java es un lenguaje de programación compilado, mientras que JavaScript su nombre lo dice, es un script, ambos se pueden usar para orientado a objetos, también Java es usaado para backend y JavaScript para páginas web</p>
+  <p>2. getFullYear() – Obtiene el año (ej. 2025), ____ getMonth() – Devuelve el mes (0 a 11), ____
+    getDate() – Día del mes (1 a 31), ____
+    getDay() – Día de la semana (0 = domingo, 6 = sábado), ____
+    getTime() – Tiempo en milisegundos desde el 1 de enero de 1970.</p>
+  <p>3. push(elemento) – Agrega al final.
+    pop() – Elimina el último elemento.
+    shift() – Elimina el primer elemento.
+    unshift(elemento) – Agrega al inicio.
+    forEach(callback) – Itera sobre cada elemento.</p>
+  <p>4.
+    function Funcion() {
+    let variableLocal = 10;
+    const otraVariable = "Hola";
+    }</p>
+  <p>5. Si otras funciones usan el mismo nombre de variable global, pueden sobrescribirse causando error, por lo que también se pierde el control de los valores y hace que las funciones puedan tener cambios inesperados</p>
+</body>
+</html>
