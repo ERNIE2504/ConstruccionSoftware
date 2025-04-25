@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Validador de Password</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="script" href="script.js">
+</head>
+<body>
+<main>
+  <div class="container">
+    <h2>Validador de Password</h2>
+    <form id="passwordForm">
+      <label for="password">Contraseña</label>
+      <input type="text" id="password" required />
+
+      <div class="requirements" id="passwordRequirements">
+        <span id="length" class="invalid">- Mínimo 8 caracteres</span>
+        <span id="uppercase" class="invalid">- Una letra mayúscula</span>
+        <span id="lowercase" class="invalid">- Una letra minúscula</span>
+        <span id="number" class="invalid">- Un número</span>
+        <span id="symbol" class="invalid">- Un símbolo</span>
+      </div>
+
+      <div class="strength-bar" id="strengthBar"><div style="width: 0%"></div></div>
+
+      <label for="confirmPassword">Confirmar Contraseña</label>
+      <input type="password" id="confirmPassword" required />
+      <div id="matchMessage" class="match-message"></div>
+
+      <button type="submit" id="submitButton" disabled>Registrar</button>
+    </form>
+  </div>
+</main>
+<script src="script.js"></script>
+
+
+<footer>
+  <h4>Preguntas a responder</h4>
+  <p>1. Es importante, para que el servidor no guarde información basura o irrevelante, por lo que se necesita poner validadores para evitar eso</p>
+  <p>2. Puede desactivar el javaScript en el navegador, editar la pagina al poner inspeccionar, también puede usar el programa de postman para obtener un post</p>
+  <p>3. Ya que aunque se puedan evadir siguen siendo buenas practicas para la experiencia del usuario y reducir las cargas al servidor</p>
+</footer>
+
+
+
+</body>
+</html>
