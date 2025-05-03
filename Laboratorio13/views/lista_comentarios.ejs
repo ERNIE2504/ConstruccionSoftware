@@ -1,0 +1,12 @@
+
+<h1><%= titulo %></h1>
+<ul>
+    <% if (comentarios.length > 0) { %>
+        <% comentarios.forEach(c => { %>
+            <li><%= c.texto %></li>
+        <% }) %>
+    <% } else { %>
+        <li>No hay comentarios aún.</li>
+    <% } %>
+</ul>
+
