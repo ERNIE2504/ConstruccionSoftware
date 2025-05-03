@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('includes/head.ejs') %>
+  <h1><%= titulo %></h1>
+
+  <form action="/form" method="POST">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <%- include('includes/footer.ejs') %>
+

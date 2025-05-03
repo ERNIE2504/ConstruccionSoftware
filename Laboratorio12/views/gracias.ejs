@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('includes/head.ejs') %>
+  <h1><%= titulo %></h1>
+
+  <% if (nombre) { %>
+    <p>Gracias por enviar tu nombre: <%= nombre %></p>
+  <% } %>
+
+  <% if (nombres && nombres.length > 0) { %>
+    <h2>Lista de nombres:</h2>
+    <ul>
+      <% for (let n of nombres) { %>
+        <li><%= n %></li>
+      <% } %>
+    </ul>
+  <% } else { %>
+    <p>No hay nombres aún.</p>
+  <% } %>
+
+  <%- include('includes/footer.ejs') %>
+
+
