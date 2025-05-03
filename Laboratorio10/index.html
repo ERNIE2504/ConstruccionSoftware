@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Datos</title>
+</head>
+<body>
+<h1>Enviar datos al servidor</h1>
+<form action="/guardar" method="POST">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+    <br>
+    <label for="comentario">Comentario:</label>
+    <textarea id="comentario" name="comentario" required></textarea>
+    <br>
+    <button type="submit">Enviar</button>
+</form>
+</body>
+</html>
