@@ -1,0 +1,17 @@
+<!-- views/formulario-videojuego.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agregar Videojuego</title>
+</head>
+<body>
+    <h1>Agregar Videojuego</h1>
+    <form action="/agregar-videojuego" method="POST">
+        <label>Nombre:</label>
+        <input type="text" name="nombre" required><br>
+        <label>Plataforma:</label>
+        <input type="text" name="plataforma" required><br>
+        <button type="submit">Guardar</button>
+    </form>
+</body>
+</html>

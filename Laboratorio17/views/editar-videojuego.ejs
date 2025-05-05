@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Videojuego</title>
+</head>
+<body>
+    <h1>Editar Videojuego</h1>
+    <form action="/editar-videojuego" method="POST">
+        <input type="hidden" name="id" value="<%= videojuego.id %>">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" value="<%= videojuego.nombre %>" required>
+        <br>
+        <label for="plataforma">Plataforma:</label>
+        <input type="text" name="plataforma" id="plataforma" value="<%= videojuego.plataforma %>" required>
+        <br>
+        <button type="submit">Actualizar</button>
+    </form>
+    <br>
+    <a href="/videojuegos">Cancelar</a>
+</body>
+</html>

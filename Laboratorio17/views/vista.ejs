@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Videojuegos</title>
+</head>
+<body>
+    <h1>Lista de videojuegos</h1>
+    <ul>
+        <% videojuegos.forEach(videojuego => { %>
+            <li>
+                <strong><%= videojuego.nombre %></strong> - <%= videojuego.plataforma %>
+                <a href="/editar-videojuego/<%= videojuego.id %>">Editar</a>
+            </li>
+        <% }); %>
+    </ul>
+    <a href="/agregar-videojuego">Agregar nuevo videojuego</a>
+</body>
+</html>
+
